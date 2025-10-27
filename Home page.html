@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWings - Airline Management System</title>
+    <link rel="stylesheet" href="frontend/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-plane"></i>
+                <span>SmartWings</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#flights" class="nav-link">Flights</a></li>
+                <li><a href="#booking" class="nav-link">Book Now</a></li>
+                <li><a href="#status" class="nav-link">Flight Status</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="frontend/pages/login.html" class="nav-link login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to SmartWings</h1>
+            <p>Your trusted partner for seamless air travel experience</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="showBookingForm()">Book Now</button>
+                <button class="btn btn-secondary" onclick="showFlightStatus()">Flight Status</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-plane-departure"></i>
+        </div>
+    </section>
+
+    <!-- Quick Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Book Your Flight</h2>
+            <div class="booking-form">
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from">From</label>
+                            <select id="from" name="from" required>
+                                <option value="">Select Origin</option>
+                                <option value="NYC">New York (NYC)</option>
+                                <option value="LAX">Los Angeles (LAX)</option>
+                                <option value="CHI">Chicago (CHI)</option>
+                                <option value="MIA">Miami (MIA)</option>
+                                <option value="SEA">Seattle (SEA)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="to">To</label>
+                            <select id="to" name="to" required>
+                                <option value="">Select Destination</option>
+                                <option value="NYC">New York (NYC)</option>
+                                <option value="LAX">Los Angeles (LAX)</option>
+                                <option value="CHI">Chicago (CHI)</option>
+                                <option value="MIA">Miami (MIA)</option>
+                                <option value="SEA">Seattle (SEA)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departure">Departure Date</label>
+                            <input type="date" id="departure" name="departure" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="return">Return Date</label>
+                            <input type="date" id="return" name="return">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="passengers">Passengers</label>
+                            <select id="passengers" name="passengers" required>
+                                <option value="1">1 Passenger</option>
+                                <option value="2">2 Passengers</option>
+                                <option value="3">3 Passengers</option>
+                                <option value="4">4 Passengers</option>
+                                <option value="5">5+ Passengers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="class">Travel Class</label>
+                            <select id="class" name="class" required>
+                                <option value="economy">Economy</option>
+                                <option value="business">Business</option>
+                                <option value="first">First Class</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Search Flights</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Status Section -->
+    <section id="status" class="flight-status-section">
+        <div class="container">
+            <h2>Real-Time Flight Status</h2>
+            <div class="status-board">
+                <div class="status-header">
+                    <span>Flight</span>
+                    <span>Route</span>
+                    <span>Status</span>
+                    <span>Time</span>
+                </div>
+                <div id="statusList" class="status-list">
+                    <!-- Flight status will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Flight Management</h3>
+                    <p>Comprehensive flight scheduling and management system</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h3>Easy Booking</h3>
+                    <p>Simple and secure online booking platform</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Passenger Care</h3>
+                    <p>Dedicated passenger management and support</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer assistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>SmartWings</span>
+                    </div>
+                    <p>Your trusted partner for seamless air travel experience worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#booking">Book Flight</a></li>
+                        <li><a href="#status">Flight Status</a></li>
+                        <li><a href="frontend/pages/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@smartwings.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Aviation St, Sky City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SmartWings. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+            <h4>SmartWings Assistant</h4>
+            <button id="closeChatbot" class="close-btn">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">Hello! How can I help you today?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+    <button id="openChatbot" class="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="frontend/js/main.js"></script>
+</body>
+</html>
